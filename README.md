@@ -50,7 +50,7 @@ Git clone this repo
 ```
 $ cd vagrant-consul && vagrant up
 ```
-This will create three consul servers in a cluster and a consul clinet running the web UI which can be accessed at [http://localhost:8500](http://localhost:8500).
+This will create three consul servers in a cluster and a consul client running the web UI which can be accessed at [http://localhost:8500](http://localhost:8500).
 
 ## Contributing
 
