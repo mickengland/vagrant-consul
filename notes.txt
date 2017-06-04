@@ -1,9 +1,0 @@
-==> consul3: 2017-06-04 20:50:38 (3.53 MB/s) - ‘consul_0.8.3_linux_amd64.zip’ saved [9715622/9715622]
-==> consul3: Archive:  consul_0.8.3_linux_amd64.zip
-==> consul3: replace consul? [y]es, [n]o, [A]ll, [N]one, [r]ename:
-==> consul3: error:  invalid response [exit]
-==> consul3: replace consul? [y]es, [n]o, [A]ll, [N]one, [r]ename:  NULL
-==> consul3: (EOF or read error, treating as "[N]one" ...)
-==> consul3: mkdir:
-==> consul3: cannot create directory ‘/var/consul’
-==> consul3: : File exists
