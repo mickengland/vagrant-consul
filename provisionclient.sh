@@ -33,9 +33,15 @@ cp $1 /etc/consul.d/config.json
 sudo systemctl enable consul.service
 sudo service consul start
 
-# Copy vault confi
+# Copy vault configs
 mkdir -p /etc/vault.d
 cp /vagrant/vault.hcl /etc/vault.d/vault.hcl
+
+# Copy ssl certs
+mkdir -p /var/lib/vault/ssl
+cp /vagrant/vault.crt /var/lib/vault/ssl/vault.crt
+cp /vagrant/vault.key /var/lib/vault/ssl/vault.key
+cat /var/lib/vault/ssl/vault.crt >> /etc/ssl/certs/ca-certificates.crt
 
 # Get latest vault
 cd /usr/local/bin
@@ -49,5 +55,5 @@ sudo systemctl enable vault.service
 sudo service vault start
 
 # Initialize the Vault
-export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_ADDR='https://127.0.0.1:8200'
 vault init

@@ -1,9 +1,20 @@
-backend "consul" {
-  address = "127.0.0.1:8500"
-  path = "vault/"
-}
-
-listener "tcp" {
-  address = "0.0.0.0:8200"
-  tls_disable = 1
+{
+  "disable_mlock": true,
+  "default_lease_ttl": "24h",
+  "max_lease_ttl": "24h",
+  "backend": {
+    "consul":{
+      "path":"vault/",
+      "address":"127.0.0.1:8500",
+      "scheme":"http",
+      "datacenter":"dc1"
+    }
+  },
+  "listener": {
+    "tcp": {
+      "address":"127.0.0.1:8200",
+      "tls_cert_file":"/var/lib/vault/ssl/vault.crt",
+      "tls_key_file":"/var/lib/vault/ssl/vault.key"
+     }
+  }
 }
